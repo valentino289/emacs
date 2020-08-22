@@ -7,7 +7,8 @@
 (setq initial-scratch-message nil)
 
 ;; load theme
-(load "~/.emacs.d/themes/Seventies.el")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(load-theme 'seventies t)
 
 ;; prevent lockfiles
 (setq create-lockfiles nil)
