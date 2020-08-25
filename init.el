@@ -2,6 +2,7 @@
 ;;; <valentino2@protonmail.com>
 ;;; emacs init.el
 
+;;; META
 ;; disable splash screen and startup message
 (setq inhibit-startup-message t) 
 (setq initial-scratch-message nil)
@@ -10,14 +11,18 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (load-theme 'seventies t)
 
+;; change autosave location
+(setq backup-directory-alist '(("." . "~/.emacs.d/auto-save-list")))
+
 ;; prevent lockfiles
 (setq create-lockfiles nil)
 
+;;; FORMATTING
 ;; truncate lines on default
 (set-default 'truncate-lines t)
 
-;; change autosave location
-(setq backup-directory-alist '(("." . "~/.emacs.d/auto-save-list")))
+;; stop auto-indent on carriage return
+(electric-indent-mode 0)
 
 ;;; OCTAVE MODE
 (autoload 'octave-mode "octave-mod" nil t)
@@ -26,4 +31,3 @@
 ;; turn off auto indent on newline in Octave
 (setq octave-block-offset nil)
 (setq octave-continuation-offset nil)
-
